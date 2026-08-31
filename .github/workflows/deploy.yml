@@ -25,32 +25,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - name: Publish to gh-pages branch
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Replace the gh-pages branch entirely with the fresh build.
-          git checkout --orphan gh-pages
-          git rm -rf .
-          cp -r out/* .
-          git add -A
-          git commit -m "deploy: static export $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          git push origin gh-pages --force
-      - name: Ensure Pages source is gh-pages
-        run: |
-          gh api repos/${{ github.repository }}/pages --method PUT \
-            -f 'source[branch]=gh-pages' -f 'source[path]=/'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - id: deployment
+        uses: actions/deploy-pages@v4
