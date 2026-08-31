@@ -19,7 +19,7 @@ const jobs = [
   {
     company: "Venture23 / iBriz",
     role: "Software Engineer",
-    dates: "Jun 2024 - Present",
+    dates: "Jun 2024 to Present",
     where: "US / Hybrid",
     bullets: [
       "Full-stack contributor across consumer Web3 products at a blockchain-focused company.",
@@ -33,11 +33,11 @@ const jobs = [
   {
     company: "Varicon",
     role: "Front-End Lead Engineer",
-    dates: "Aug 2021 - Aug 2024",
+    dates: "Aug 2021 to Aug 2024",
     where: "Melbourne, AU / Remote",
     bullets: [
       "Led the frontend team building React apps for construction budget-forecasting software.",
-      "Architected a Turborepo monorepo with Module Federation - independently deployable feature domains, faster parallel team delivery.",
+      "Architected a Turborepo monorepo with Module Federation so each feature domain deploys independently and the team ships in parallel.",
       "Drove the JS-to-TS migration to a near-100% TypeScript codebase (4,000+ typed modules).",
       "Data-intensive UIs: virtualized/editable complex tables, multi-step forms with validation, interactive charts and dashboards.",
       "Scalable state with Redux + Redux-Saga (Reduxsauce duck pattern, Reselect memoized selectors) for forecasting and tracking flows.",
@@ -47,37 +47,37 @@ const jobs = [
   {
     company: "ESR Tech",
     role: "Software Engineer / DevSecOps",
-    dates: "Mar 2020 - Aug 2021",
+    dates: "Mar 2020 to Aug 2021",
     where: "California, USA / Remote",
     bullets: [
       "Built React/Redux web apps across health, energy, and sports; also a DevSecOps role focused on GCP.",
       "Led a team of interns; owned deployments on GCP.",
-      <>Otis Health - medical-records platform on microservices with Protobuf client/server, deployed on GCP.</>,
-      <>Ally Know Your Load - full-stack energy audit app (React/Redux + Node.js), managing large datasets and reports on GCP.</>,
-      <>DOC Nepal - telemedicine app with real-time video (Next.js SSR for SEO, Twilio video).</>,
-      "Global EMR - automated scheduling, Clinical Decision Support, and billing; GCP.",
-      "DoubleTake - athlete video-profile platform with Stripe, React-Player, AWS Elastic Transcoder.",
+      "Otis Health: medical-records platform on microservices with Protobuf client/server, deployed on GCP.",
+      "Ally Know Your Load: full-stack energy audit app (React/Redux + Node.js) managing large datasets and reports on GCP.",
+      "DOC Nepal: telemedicine app with real-time video, using Next.js SSR for SEO and Twilio video.",
+      "Global EMR: automated scheduling, Clinical Decision Support, and billing on GCP.",
+      "DoubleTake: athlete video-profile platform with Stripe, React-Player, and AWS Elastic Transcoder.",
     ],
     stack: "React · Next.js SSR · Node.js · Redux + Sagas · GCP · AWS · Firebase",
   },
   {
     company: "BitsBeat IT Solution",
     role: "Front-End Engineer / Team Lead",
-    dates: "Jan 2018 - Feb 2020",
+    dates: "Jan 2018 to Feb 2020",
     where: "Pulchowk, Nepal",
     bullets: [
       "Led a frontend team building React web apps and their CMSs; trained interns in JS, React, Redux.",
       "Built dApps in React alongside blockchain engineers.",
-      "Plant Prefab - 3D interior explorer/customizer; injected API data into a WebGL model.",
-      "Xceltrip / XcelPay - crypto flight-booking frontend and POS sales with a socket-based payment gateway.",
-      "ICONBet Dice Roll - Web3 betting game on ICON; separately built an ICON RPC React app in 2 days.",
+      "Plant Prefab: 3D interior explorer and customizer, injecting API data into a WebGL model.",
+      "Xceltrip and XcelPay: crypto flight-booking frontend and POS sales with a socket-based payment gateway.",
+      "ICONBet Dice Roll: Web3 betting game on ICON. Also built an ICON RPC React app in 2 days.",
     ],
     stack: "React · WebGL · GraphQL · Web3 (ICON) · Redux + Sagas",
   },
   {
     company: "Reliance International Academy",
     role: "Lab Teacher",
-    dates: "Jul 2017 - Oct 2017",
+    dates: "Jul 2017 to Oct 2017",
     where: "Nepal",
     bullets: ["Taught web fundamentals and C programming as a computer lab teacher."],
     stack: "",
@@ -100,9 +100,9 @@ export default function Home() {
             <div className="kicker">Senior Software Engineer</div>
             <h1>Saroj Dhungana</h1>
             <p className="role">
-              8+ years building <b>full-stack and Web3 products</b> — React, Node,
-              and GCP/AWS — with recent work shipping production wallets for
-              Sui &amp; Solana.
+              8+ years building <b>full-stack and Web3 products</b> with React,
+              Node, GCP, and AWS. Lately I've been shipping production wallets
+              for Sui and Solana.
             </p>
             <div className="links">
               <a href={links.github}>GitHub</a>
@@ -124,10 +124,10 @@ export default function Home() {
               microservices on GCP and AWS.
             </p>
             <p>
-              For the last two years I've been shipping consumer Web3 — production
-              wallets on Sui and Solana, contract integrations on Stellar, Chrome
-              extensions, and React Native apps — across extension, mobile, and web
-              surfaces.
+              For the last two years I've been shipping consumer Web3: production
+              wallets on Sui and Solana, contract integrations on Stellar, and
+              Chrome extensions and React Native apps across extension, mobile,
+              and web.
             </p>
             <div className="stats">
               <div className="stat"><b>8+</b><span>years of engineering</span></div>
@@ -159,7 +159,7 @@ export default function Home() {
             {jobs.map((j) => (
               <div className="job" key={j.company}>
                 <div className="head">
-                  <div className="company">{j.company} <span>— {j.role}</span></div>
+                  <div className="company">{j.company}, <span>{j.role}</span></div>
                   <div className="meta">{j.dates} · {j.where}</div>
                 </div>
                 <ul>

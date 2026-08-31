@@ -12,11 +12,11 @@ const inter = Inter({ variable: "--font-sans", subsets: ["latin"], weight: ["400
 const jetbrains = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Saroj Dhungana — Senior Software Engineer",
+  title: "Saroj Dhungana, Senior Software Engineer",
   description:
-    "Senior Software Engineer · Full Stack · Web3 — 8+ years building React, Node, and Web3 products.",
+    "Senior Software Engineer with 8+ years building full-stack and Web3 products using React, Node, and cloud.",
   openGraph: {
-    title: "Saroj Dhungana — Senior Software Engineer",
+    title: "Saroj Dhungana, Senior Software Engineer",
     description:
       "Full stack + Web3. React, Node, GCP/AWS, wallets for Sui & Solana.",
   },
