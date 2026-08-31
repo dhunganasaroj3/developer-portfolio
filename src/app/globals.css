@@ -180,19 +180,20 @@ section h2 {
   margin: 0 0 22px;
   letter-spacing: -0.2px;
 }
+/* Desktop: each section is a two-col grid; the label lives in the
+   left rail, next to the content (not above it), so sticky never overlaps. */
 @media (min-width: 760px) {
-  .container > section > .section-left,
-  .container-wide > section > .section-left {
-    grid-column: 1 / 2;
-    grid-row: 1;
+  section {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    column-gap: 64px;
   }
 }
 
 /* rail labels (left rail in two-col) */
 .rail-label {
   grid-column: 1 / 2;
-  position: sticky;
-  top: 90px;
+  align-self: start;
   font-family: var(--font-mono, "JetBrains Mono", monospace);
   font-size: 11px;
   text-transform: uppercase;
@@ -200,9 +201,14 @@ section h2 {
   color: var(--accent);
   padding-top: 8px;
 }
+@media (min-width: 760px) {
+  .rail-label {
+    position: sticky;
+    top: 96px;
+  }
+}
 @media (max-width: 759px) {
   .rail-label {
-    position: static;
     grid-column: 1 / -1;
     margin-bottom: 4px;
   }
